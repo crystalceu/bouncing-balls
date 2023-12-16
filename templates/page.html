@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="../styles.css" rel="stylesheet">
+        <script src="../index.js"></script>
+    </head>
+    <body>
+        <div class="flexdiv flexrow">
+            <div class="flexdiv flexcol">
+                <label for="damperingCoef">dampering level</label>
+                <input type="range" id="damperingCoef" min="25" max="99" value="60">
+            </div>
+            <div class="flexdiv flexcol">
+                <label for="ballRadius">ball radius</label>
+                <input type="range" id="ballRadius" min="10" max="100" value="25">
+            </div>
+            <div>
+                <input type="color" class="form-control form-control-color" id="ballColor" value="#65b82e" style="width: 50px;">
+            </div>
+            <div>
+                <button id="clearCanvasButton" class="btn btn-secondary">clear</button>
+            </div>
+        </div>
+        <div class="container">
+            <canvas id="ballCanvas" width="640" height="640"></canvas>
+        </div>
+    </body>
+</html>

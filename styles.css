@@ -1,0 +1,25 @@
+canvas {border: 1px solid black; cursor: crosshair;}
+p {margin: 0;}
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.container {
+    margin-left: auto; 
+    margin-right: auto;
+}
+.flexdiv {
+    display: flex; 
+    text-align: center;
+    align-items: center;
+}
+.flexcol {
+    flex-direction: column;
+}
+.flexrow {
+    flex-direction: row;
+    gap: 10px;
+}
