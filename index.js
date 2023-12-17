@@ -7,12 +7,12 @@ var canvas = '';
 var ctx = '';
 
 class Ball {
-    constructor(x, y, dy, ballRadius, damperingCoefficient, ballColor) {
+    constructor(x, y, dy, ballRadius, dampingCoefficient, ballColor) {
         this.x = x;
         this.y = y;
         this.shiftY = dy;
         this.ballRadius = ballRadius;
-        this.dampering = damperingCoefficient;
+        this.damping = dampingCoefficient;
         this.ballColor = ballColor;
     }
 }
@@ -35,11 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
         else {
             counter = counter + 1;
         }
+        console.log(document.getElementById("ballColor").value);
         cord[counter] = new Ball(event.pageX  - canvas.offsetLeft, 
             event.pageY - canvas.offsetTop, 
             0, 
             Number(document.getElementById("ballRadius").value), 
-            Number(document.getElementById("damperingCoef").value) / 100,
+            Number(document.getElementById("dampingCoef").value) / 100,
             document.getElementById("ballColor").value)
     });
     setInterval(function() {
@@ -62,11 +63,11 @@ function drawBall(element) {
 
 function draw(element) {
     if (element.y + element.ballRadius >= canvas.height) {
-        element.shiftY = -element.shiftY * element.dampering;
+        element.shiftY = -element.shiftY * element.damping;
         element.y = canvas.height - element.ballRadius;
     }
     else if (element.y - element.ballRadius <= 0) {
-        element.shiftY = -element.shiftY * element.dampering;
+        element.shiftY = -element.shiftY * element.damping;
         element.y = element.ballRadius;
     }
     element.shiftY += gravityConstant;

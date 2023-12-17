@@ -7,10 +7,6 @@ body {
     align-items: center;
     justify-content: space-around;
 }
-.container {
-    margin-left: auto; 
-    margin-right: auto;
-}
 .flexdiv {
     display: flex; 
     text-align: center;
