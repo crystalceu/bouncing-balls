@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         else {
             counter = counter + 1;
         }
-        console.log(document.getElementById("ballColor").value);
         cord[counter] = new Ball(event.pageX  - canvas.offsetLeft, 
             event.pageY - canvas.offsetTop, 
             0, 
@@ -43,13 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
             Number(document.getElementById("dampingCoef").value) / 100,
             document.getElementById("ballColor").value)
     });
-    setInterval(function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i <= counter; i++) {
-            draw(cord[i]);
-        }
-    }, 10);
+    requestAnimationFrame(looper);
 });
+
+function looper() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i <= counter; i++) {
+        draw(cord[i]);
+    }
+    requestAnimationFrame(looper);
+}
 
 function drawBall(element) {
     ctx.beginPath();
